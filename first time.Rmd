@@ -1,0 +1,48 @@
+---
+title: "Untitled"
+author: "kathy"
+date: "9/10/2019"
+output: github_document
+---
+
+
+## section1
+
+```{r}
+set.seed(1)
+samp=rnorm(5,mean = 1)
+length(samp)
+
+eval=FALSE
+```
+
+the mean of sample is 
+`r mean(samp)`
+
+the median of sample is
+`r median(samp)`
+
+# subsection1.1
+
+```{r dataframe}
+library(tidyverse)
+r_ss<-tibble(
+  ss = rnorm(500),
+  l_zero = ss>0,
+  ab = abs(ss)
+)
+
+ggplot(r_ss,aes(x=ab))+geom_histogram()
+median_ss=median(pull(r_ss,ss))
+
+
+```
+
+The mean of r_ss is
+`r mean(r_ss$ss)`
+## Including Plots
+
+```{r}
+
+```
+
